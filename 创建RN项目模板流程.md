@@ -1,4 +1,4 @@
-#一：新建RN项目
+# 一：新建RN项目
 
 `react-native init RNApp `
 
