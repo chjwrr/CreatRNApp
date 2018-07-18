@@ -10,47 +10,47 @@
 
 ```
 <key>NSCalendarsUsageDescription</key>
-	<string>为了更好的体验,请允许访问日历</string>
-	<key>NSCameraUsageDescription</key>
-	<string>为了更好的体验,请允许访问您的相机</string>
-	<key>NSContactsUsageDescription</key>
-	<string>为了更好的体验,请允许访问您的联系人</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>为了更好的体验,请允许访问位置信息</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>为了更好的体验,请允许访问位置信息</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>为了更好的体验,请允许访问您的麦克风</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>将图片保存到相册,请允许访问您的相册</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>为了更好的体验,请允许访问您的相册</string>
-	<key>NSRemindersUsageDescription</key>
-	<string>为了更好的体验,请允许访问备忘录</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>iconfont.ttf</string>
-	</array>
+<string>为了更好的体验,请允许访问日历</string>
+<key>NSCameraUsageDescription</key>
+<string>为了更好的体验,请允许访问您的相机</string>
+<key>NSContactsUsageDescription</key>
+<string>为了更好的体验,请允许访问您的联系人</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>为了更好的体验,请允许访问位置信息</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>为了更好的体验,请允许访问位置信息</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string></string>
+<key>NSMicrophoneUsageDescription</key>
+<string>为了更好的体验,请允许访问您的麦克风</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>将图片保存到相册,请允许访问您的相册</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>为了更好的体验,请允许访问您的相册</string>
+<key>NSRemindersUsageDescription</key>
+<string>为了更好的体验,请允许访问备忘录</string>
+<key>UIAppFonts</key>
+<array>
+	<string>iconfont.ttf</string>
+</array>
 ```
 
 允许http方式
 
 ```
 <key>NSAppTransportSecurity</key>
+<dict>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
+	<key>NSExceptionDomains</key>
 	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
+		<key>localhost</key>
 		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
 		</dict>
 	</dict>
+</dict>
 ```
 
 将font(图标)文件夹add file到xcode目录中
