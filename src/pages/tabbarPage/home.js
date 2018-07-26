@@ -15,15 +15,12 @@ import Immutable from 'immutable';
 
 class home extends Component {
 
-    static navigationOptions = {
-        headerTitle: <Text>主页</Text>,
+   // navigation  可用于跳转
+   // screenProps 可用于取值全局变量
+   static navigationOptions = ({ navigation, screenProps }) => ({
+        headerTitle: <Text>test</Text>,
         headerStyle: {elevation: 0, shadowOpacity: 0} ,// 导航条样式
-        headerRight: (
-            <View>
-                <Text>home1</Text>
-            </View>
-        )
-    };
+    });
 
     constructor(props){
         super(props)

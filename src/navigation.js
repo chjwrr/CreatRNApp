@@ -1,18 +1,26 @@
 /**
  * Created by chj on 2018/4/17.
  */
-import { TabNavigator } from 'react-navigation'
-import APPTabbar from './tabbar';
+import {createBottomTabNavigator} from "react-navigation";
+import TabbarRoot from './tabbar'
+const Tabbar = createBottomTabNavigator(TabbarRoot.AppRootTabBarRouteConfigs, TabbarRoot.AppRootTabBarNavigatorConfigs);
 
-const Tabbar = TabNavigator(APPTabbar.AppRootTabBarRouteConfigs, APPTabbar.AppRootTabBarNavigatorConfigs);
+
+import Home from './pages/home';
+
+
 
 const AppNavigationRouterConfigs = {
     Tabbar: {
         screen: Tabbar,
     },
+    Home: {
+        screen: Home,
+    },
 };
 const AppNavigationStackConfigs = {
-    initialRouteName: 'Tabbar', // 以tabbar为主路由
+    initialRouteName: 'Tabbar', // 以Tabbar为主路由
+    initialRouteName: 'Home', // 以Home为主路由
     mode: 'card',
     headerMode: 'screen',
     onTransitionStart:(()=>{

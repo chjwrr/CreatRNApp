@@ -4,10 +4,9 @@
 import  { TabBarBottom } from 'react-navigation'
 import React from 'react'
 
-import HomePage from './pages/tabbarPage/home'
-import ContactPage from './pages/tabbarPage/contact'
-import MomentPage from './pages/tabbarPage/moments'
-import MinePage from './pages/tabbarPage/mine'
+import HomePage from './pages/home'
+import ContactPage from './pages/imageListOne'
+
 
 import TabbarIcon from './comment/tabbar/tabbarIcon';
 import Color from './constance/staticColor';
@@ -22,7 +21,10 @@ const AppRootTabBarRouteConfigs = {
             ),
             tabBarOnPress:(obj)=>{
                 console.log(obj);
-                obj.jumpToIndex(obj.scene.index)
+                // navigation: navigation prop for the screen
+                // defaultHandler: the default handler for tab press
+		// 跳转之前进行逻辑处理
+                obj.defaultHandler()
             },
         })
     },
@@ -35,43 +37,17 @@ const AppRootTabBarRouteConfigs = {
             ),
             tabBarOnPress:(obj)=>{
                 console.log(obj);
-                obj.jumpToIndex(obj.scene.index)
+                obj.defaultHandler()
+
             },
 
-        }
-    },
-    Moment: {
-        screen: MomentPage,
-        navigationOptions: {
-            tabBarLabel: '朋友圈',
-            tabBarIcon: ({focused, tintColor}) => (
-                <TabbarIcon focused={focused} type='moment' />
-            ),
-            tabBarOnPress:(obj)=>{
-                console.log(obj);
-                obj.jumpToIndex(obj.scene.index)
-            },
-        }
-    },
-    Mine: {
-        screen: MinePage,
-        navigationOptions: {
-            tabBarLabel: '我的',
-            tabBarIcon: ({focused, tintColor}) => (
-                <TabbarIcon focused={focused} type='mine' />
-            ),
-            tabBarOnPress:(obj)=>{
-                console.log(obj);
-                obj.jumpToIndex(obj.scene.index)
-            },
         }
     }
 };
 
 const AppRootTabBarNavigatorConfigs = {
     initialRoute: HomePage, // 默认选中tabbar
-    tabBarComponent: TabBarBottom, // tabbar的位置，默认是下部
-    tabBarPosition: 'bottom',
+
     lazy: true, //是否懒加载 == 是否同时加载tabbar对应的page
     tabBarOptions: {
         activeTintColor: Color.TABBAR_SELECT_COLOR, // 选中的颜色

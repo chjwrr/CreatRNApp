@@ -12,21 +12,23 @@ import {
     View
 } from 'react-native';
 
-import {StackNavigator} from "react-navigation";
+import {createStackNavigator} from "react-navigation";
 import Navigator from './navigation'
 import {
     ACTION_SAVE_ROUTEID
 } from './action/action';
 
 
-const Navigation = StackNavigator(Navigator.AppNavigationRouterConfigs, navigator.AppNavigationStackConfigs);
+const Navigation = createStackNavigator(Navigator.AppNavigationRouterConfigs, navigator.AppNavigationStackConfigs);
 
 
 type Props = {};
 class enter extends Component<Props> {
+
     render() {
         return (
-                <Navigation onNavigationStateChange={(prevNav, nav, action)=>{
+                <Navigation screenProps={{name: '全局变量，this.props.screenProps'}}
+                            onNavigationStateChange={(prevNav, nav, action)=>{
                             // 每次导航改变时，都会走这个方法，可以再次判断逻辑，比如切换tabar需要调用方法
                             // console.log('prevNav=',prevNav);
                             // console.log('nav=',nav);
@@ -46,7 +48,6 @@ class enter extends Component<Props> {
 
 function mapStateToProps(state) {
     return {
-
     }
 }
 function mapDispatchToProps(dispatch) {
