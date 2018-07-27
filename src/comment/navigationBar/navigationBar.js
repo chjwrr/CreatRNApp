@@ -64,7 +64,7 @@ export default class navigationBar extends Component<{}> {
                                     </TouchableOpacity> : null
                         }
                     </View>
-                    <TouchableOpacity onPress={this.centerFunc} style={styles.centerView}>
+                    <TouchableOpacity activeOpacity={1} onPress={this.centerFunc} style={styles.centerView}>
                         <Text style={
                             [styles.centerTitle, {
                                 fontSize: this.props.centerTitleFontSize,
@@ -130,26 +130,28 @@ navigationBar.defaultProps = {
     leftTitleType: null,
     leftTitleFontSize: 14,
     leftTitleColor: 'black',
+    leftFunc:()=>{},
 
     centerTitle: '',
     centerTitleColor: 'black',
-    centerTitleFontSize: 25,
+    centerTitleFontSize: 20,
+    centerFunc:()=>{},
 
     rightTitle: '设置',
     rightImage: null,
     rightTitleType: null,
     rightTitleFontSize: 14,
     rightTitleColor: 'black',
+    rightFunc:()=>{},
 };
 
 
 const styles = StyleSheet.create({
     container: {
         height: NavigationBar_Height+StatusBar_Height,
-        backgroundColor: 'yellow'
+        backgroundColor: 'white'
     },
     navigationBar: {
-        backgroundColor: 'red',
         height: NavigationBar_Height,
         marginTop: StatusBar_Height,
         justifyContent: 'space-between',
